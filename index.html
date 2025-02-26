@@ -1,399 +1,496 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <title>reveal.js</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-        <link rel="stylesheet" href="dist/reset.css" />
-        <link rel="stylesheet" href="dist/reveal.css" />
-        <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
+    <title>reveal.js</title>
 
-        <!-- Theme used for syntax highlighted code -->
-        <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
-        <link rel="stylesheet" href="plugin/chalkboard/style.css" />
-        <link rel="stylesheet" href="plugin/customcontrols/style.css" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
 
-    <body>
-        <div class="reveal">
-            <div class="slides">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
+    <link rel="stylesheet" href="plugin/chalkboard/style.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Event-Driven Programming (EDP)</h1>
+                <h3>Событийно-управляемое программирование (СУП)</h3>
+                <img class="r-stretch" src="https://ktkv-presentations.github.io/algos-21" data-type="qrcode" />
+            </section>
+            <section>
                 <section>
-                    <h1>Beautiful presentations</h1>
-                    <h2>New features</h2>
+                    <h1>Событийно-управляемое программирование </h1>
+                    <p>парадигма, в которой выполнение программы определяется возникновением событий</p>
+                    <div class="border-b">
+                        <strong>
+                            Ключевые особенности:
+                        </strong>
+                        <ul>
+                            <li>
+                                Код не выполняется линейно, а ожидает события.
+                            </li>
+                            <li>
+                                Есть механизм регистрации обработчиков событий.
+                            </li>
+                            <li>
+                                Используется диспетчеризация событий (event dispatching) через цикл событий (event
+                                loop).
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-b">
+                            <h3>JavaScript</h3>
+                            <pre><code data-trim class="js">
+document.getElementById("btn").addEventListener("click", () => {
+    console.log("Кнопка нажата!");
+});
+                    </code></pre>
+                        </div>
+                        <div class="border-b">
+                            <h3>Python</h3>
+                            <pre><code data-trim class="js">
+import tkinter as tk
+
+def on_button_click():
+    print("Кнопка нажата!")
+
+root = tk.Tk()
+button = tk.Button(root, text="Нажми меня", command=on_button_click)
+button.pack()
+
+root.mainloop()
+                            </code></pre>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>Component-Based Software Engineering (CBSE)</h1>
+                    <h3>Компонентно-ориентированное программирование</h3>
+                    <p>методология, при которой система строится из независимых и повторно используемых компонентов</p>
+                    <div class="border-b">
+                        <b>Основные принципы:</b>
+                        <ul>
+                            <li>
+                                <em>Модульность</em> – каждая часть системы оформлена в виде независимого компонента.
+                            </li>
+                            <li>
+                                <em>Повторное использование</em> – компоненты могут быть использованы в разных проектах.
+                            </li>
+                            <li>
+                                <em>Инкапсуляция</em> – детали реализации скрыты, компоненты взаимодействуют через
+                                интерфейсы.
+                            </li>
+                            <li>
+                                <em>Связывание через события</em> – компоненты реагируют на события и изменяют своё
+                                состояние
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-b">
+                            <h1>React (JS)</h1>
+                            <pre><code data-trim class="js">
+function ButtonComponent() {
+    const handleClick = () => {
+        console.log("Компонентная кнопка нажата!");
+    };
+
+    return &lt;button onClick={handleClick}&gt;Нажми меня&lt;/button&gt;;
+}
+                    </code></pre>
+                            <small>
+                                <em>компонент можно многократно использовать в разных частях проекта</em>
+                            </small>
+                        </div>
+                        <div class="border-b">
+                            <h1>Tkinter (Python)</h1>
+                            <pre><code data-trim class="python">
+import tkinter as tk
+
+class ButtonComponent:
+    def __init__(self, root, text):
+        self.button = tk.Button(root, text=text, command=self.on_click)
+        self.button.pack()
+
+    def on_click(self):
+        print(f"Кнопка '{self.button.cget('text')}' нажата!")
+
+root = tk.Tk()
+button1 = ButtonComponent(root, "Кнопка 1")
+button2 = ButtonComponent(root, "Кнопка 2")
+
+root.mainloop()
+                        </code></pre>
+                            <small>
+                                <em>класс ButtonComponent представляет собой переиспользуемый компонент, который можно
+                                    создавать с разными параметрами</em>
+                            </small>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Event</h3>
+                    <h4>События</h4>
+                    <p>определенное изменение состояния системы или внешней среды, на которое можно реагировать</p>
                     <ul>
-                        <li>Nerd icons </li>
                         <li>
-                            <code class="js">
-                                (inline) => code("highlighting")
-                            </code>
+                            Клик мыши
                         </li>
-                        <li>Automatic QR Code generation</li>
-                        <li>and much more!</li>
+                        <li>
+                            Нажатие клавиши
+                        </li>
+                        <li>
+                            Соединение с сервером
+                        </li>
+                        <li>
+                            Получение данных от сенсора
+                        </li>
+                        <li>
+                            Изменение значения переменной
+                        </li>
                     </ul>
                 </section>
                 <section>
-                    <h1>CUSTOM TOKYONIGHT THEME</h1>
-                    <h2 class="fragment">THAT HAS</h2>
-                    <h3 class="fragment">MULTI</h3>
-                    <h4 class="fragment">LEVEL</h4>
-                    <h5 class="fragment">HEADING</h5>
-                    <h6 class="fragment">COLORS</h6>
-                    <h6>
-                        Thanks to this project
-                        <a
-                            href="https://github.com/tcmmichaelb139/obsidian-tokyonight">
-                            
-                        </a>
-                        for the colorscheme!
-                    </h6>
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Subscription</h3>
+                    <h4>Подписка на событие</h4>
+                    <p>процесс регистрации обработчика события, который будет выполнен при его возникновении</p>
+                    <ul>
+                        <li>
+                            Назначать несколько обработчиков для одного события.
+                        </li>
+                        <li>
+                            Разделять логику обработки.
+                        </li>
+                    </ul>
                 </section>
                 <section>
-                    <section>
-                        <h1>Tailwind CSS</h1>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div>
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                            <div class="col-span-2">
-                                <h5>Lorem, ipsum.</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Error quod fugiat harum
-                                    modi laboriosam dignissimos, maxime
-                                    possimus? Error, nihil in.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section>
-                        <h1>Custom classes</h1>
-                        <div class="grid grid-cols-3 gap-8">
-                            <div class="border-r">
-                                <h5>border-r</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-o">
-                                <h5>border-o</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                            <div class="border-y">
-                                <h5>border-y</h5>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Illum, soluta!
-                                </p>
-                            </div>
-                        </div>
-                    </section>
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Emit</h3>
+                    <h4>Генерация события</h4>
+                    <p>процесс отправки сигнала системе о том, что что-то произошло</p>
+                    <ul>
+                        <li>
+                            В интерфейсах (пользователь нажал кнопку)
+                        </li>
+                        <li>
+                            В сетевых приложениях (пришел новый WebSocket-сообщение)
+                        </li>
+                        <li>
+                            В микросервисах (один сервис уведомляет другой)
+                        </li>
+                    </ul>
                 </section>
                 <section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <div>
-                            Now also has Tokyo Night
-                            <code>highlight.js</code>
-                            highlighting implementation
-                        </div>
-                        <pre><code data-trim data-noescape>
-var foo = {
-    bar: function () {
-             alert("Hello, World!");
-         }
-};	
-					</code></pre>
-                    </section>
-                    <section data-auto-animate>
-                        <h1>New code highlighting!</h1>
-                        <h5>Inline code highlighting is now also supported!</h5>
-                        <p>
-                            Just wrap your code with
-                            <code>&lt;code&gt;</code>
-                            tag and get highlighting like this
-                            <code class="js">
-                                const foo = () => {return bar}
-                            </code>
-                            !
-                        </p>
-                    </section>
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Event Loop</h3>
+                    <h4>Цикл обработки событий</h4>
+                    <p>механизм, который постоянно ожидает новые события и вызывает соответствующие обработчики</p>
+                    <p><b>
+                            Где используется:
+                        </b></p>
+                    <ul>
+                        <li>
+                            В браузерах (JavaScript)
+                        </li>
+                        <li>
+                            В асинхронных серверах (Node.js, asyncio)
+                        </li>
+                        <li>
+                            В UI-фреймворках (Tkinter, PyQt)
+                        </li>
+                    </ul>
                 </section>
                 <section>
-                    <h1>Mermaid for beautiful diagrams!</h1>
-                    <div class="mermaid">
-                        <pre>
-						erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    CUSTOMER {
-        string name
-        string custNumber
-        string sector
-    }
-    ORDER ||--|{ LINE-ITEM : contains
-    ORDER {
-        int orderNumber
-        string deliveryAddress
-    }
-    LINE-ITEM {
-        string productCode
-        int quantity
-        float pricePerUnit
-    }
-    ORDER ||--|{ STUDENT : contains
-    STUDENT {
-        int orderNumber
-        string deliveryAddress
-    }
-						</pre
-                        >
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Event Queue</h3>
+                    <h4>Очередь событий </h4>
+                    <p>структура данных, в которой события хранятся до обработки</p>
+                    <p><b>
+                            Где используется:
+                        </b></p>
+                    <ul>
+                        <li>
+                            В многопоточных системах
+                        </li>
+                        <li>
+                            В браузерах
+                        </li>
+                        <li>
+                            В серверных фреймворках
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Основные понятия событийно-ориентированного программирования</h1>
+                    <h3>Callback</h3>
+                    <h4>Обратные вызовы</h4>
+                    <p>используются для выполнения кода после наступления события</p>
+                </section>
+                <section>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-b">
+                            <h1>React (JS)</h1>
+                            <pre><code data-trim class="js">
+function fetchData(callback) {
+    setTimeout(() => {
+        callback("Данные загружены");
+    }, 2000);
+}
+
+fetchData((data) => {
+    console.log(data);
+});
+                            </code></pre>
+                            <small>
+                                <em><code>callback()</code> вызывается после завершения операции</em>
+                            </small>
+                        </div>
+                        <div class="border-b">
+                            <h1>Asyncio</h1>
+                            <pre><code data-trim class="python">
+import asyncio
+
+async def fetch_data():
+    await asyncio.sleep(2)
+    return "Данные загружены"
+
+async def main():
+    data = await fetch_data()
+    print(data)
+
+asyncio.run(main())
+                            </code></pre>
+                            <small>
+                                <em>await останавливает выполнение, пока данные не будут загружены</em>
+                            </small>
+                        </div>
                     </div>
-                    <h4>
-                        Check documentation
-                        <a href="https://mermaid.js.org/config/usage.html">
-                            here
-                        </a>
-                        !
-                    </h4>
                 </section>
+            </section>
+            <section>
                 <section>
-                    <h1>Now supports Nerd font icons!</h1>
-                    <div>Nerdy project that adds icons to font itself</div>
-                    <h6>
-                        Checkout their site for icons like this
-                        <a href="https://www.nerdfonts.com/">󰖟</a>
-                        !
-                    </h6>
+                    <h1>История развития и популярность подходов</h1>
+                    <ul>
+                        <li>
+                            Событийно-управляемое программирование развивалось вместе с GUI. Ранние графические
+                            интерфейсы, такие как X Window System (1984), использовали событийную модель. Сегодня она
+                            применяется в браузерах (JavaScript, React), серверных технологиях (Node.js, WebSockets) и
+                            GUI-фреймворках (Tkinter, PyQt, Electron).
+                        </li>
+                        <li>
+                            Компонентный подход зародился с модульного программирования в 1960-х. В 1990-х появились
+                            COM, JavaBeans, а затем React, Vue, Tkinter и модульные микросервисные архитектуры.
+                        </li>
+                    </ul>
                 </section>
-                <section>
-                    <h1>Now supports automatic QRCode generation!</h1>
-                    <div>
-                        With GoQR you can just add data-type and alt attributes
-                        to your
-                        <code class="html">
-                            &lt;img src="https://goqr.me/" data-type="qrcode" /
-                            &gt;
-                        </code>
-                        tag!
-                    </div>
-                    <img
-                        class="r-stretch"
-                        src="https://goqr.me/"
-                        data-type="qrcode" />
-                </section>
-                <section>
-                    <h1>New changes on the way!</h1>
-                </section>
-            </div>
+            </section>
         </div>
+    </div>
 
-        <script src="dist/reveal.js"></script>
-        <script src="plugin/notes/notes.js"></script>
-        <script src="plugin/markdown/markdown.js"></script>
-        <script src="plugin/highlight/highlight.js"></script>
-        <script src="plugin/qrcode/qrcode.js"></script>
-        <script src="plugin/mermaid/mermaid.js"></script>
-        <script src="plugin/chalkboard/plugin.js"></script>
-        <script src="plugin/customcontrols/plugin.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/qrcode/qrcode.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
 
-        <script>
-            tailwind.config = {
-                corePlugins: {
-                    preflight: false,
-                },
-            }
-        </script>
-        <script>
-            // More info about initialization & config:
-            // - https://revealjs.com/initialization/
-            // - https://revealjs.com/config/
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
 
-            const colors = {
-                blue0: 'rgb(61, 89, 161)',
-                blue: 'rgb(122, 162, 247)',
-                cyan: 'rgb(125, 207, 255)',
-                magenta: 'rgb(187, 154, 247)',
-                orange: 'rgb(255, 158, 100)',
-                yellow: 'rgb(224, 175, 104)',
-                green: 'rgb(158, 206, 106)',
-                teal: 'rgb(26, 188, 156)',
-                red: 'rgb(255, 117, 127)',
-                red1: 'rgb(219, 75, 75)',
-                fg: 'rgb(192, 202, 245)',
-                bg: 'rgb(26, 27, 38)',
-                transparent: '#00000000',
-            }
+        const colors = {
+            blue0: 'rgb(61, 89, 161)',
+            blue: 'rgb(122, 162, 247)',
+            cyan: 'rgb(125, 207, 255)',
+            magenta: 'rgb(187, 154, 247)',
+            orange: 'rgb(255, 158, 100)',
+            yellow: 'rgb(224, 175, 104)',
+            green: 'rgb(158, 206, 106)',
+            teal: 'rgb(26, 188, 156)',
+            red: 'rgb(255, 117, 127)',
+            red1: 'rgb(219, 75, 75)',
+            fg: 'rgb(192, 202, 245)',
+            bg: 'rgb(26, 27, 38)',
+            transparent: '#00000000',
+        }
 
-            Reveal.initialize({
-                hash: true,
-                // Learn about plugins: https://revealjs.com/plugins/
-                plugins: [
-                    RevealMarkdown,
-                    RevealHighlight,
-                    RevealNotes,
-                    RevealMermaid,
-                    RevealChalkboard,
-                    RevealCustomControls,
-                ],
-                slideNumber: true,
-                customcontrols: {
-                    controls: [
-                        {
-                            icon: '<div></div>',
-                            title: 'Clear canvas (DEL)',
-                            action: 'RevealChalkboard.clear();',
-                        },
-                        {
-                            icon: '<div></div>',
-                            title: 'Toggle chalkboard (B)',
-                            action: 'RevealChalkboard.toggleChalkboard();',
-                        },
-                        {
-                            icon: '<div></div>',
-                            title: 'Toggle notes canvas (C)',
-                            action: 'RevealChalkboard.toggleNotesCanvas();',
-                        },
-                    ],
-                },
-                chalkboard: {
-                    boardmarkerWidth: 5,
-                    boardmarkers: [
-                        {
-                            color: colors.bg,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.fg,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.blue,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.red,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.green,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.yellow,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.teal,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                        {
-                            color: colors.orange,
-                            cursor:
-                                'url(' +
-                                path +
-                                'img/boardmarker-black.png), auto',
-                        },
-                    ],
-                    chalks: [
-                        {
-                            color: colors.bg,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.fg,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.blue,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.red,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.green,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.yellow,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.teal,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                        {
-                            color: colors.orange,
-                            cursor:
-                                'url(' + path + 'img/chalk-white.png), auto',
-                        },
-                    ],
-                },
-                mermaid: {
-                    securityLevel: 'loose',
-                    theme: 'dark',
-                    themeVariables: {
-                        darkMode: true,
-                        textColor: colors.fg,
-                        background: colors.bg,
-                        mainBkg: colors.bg,
-                        lineColor: colors.fg,
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealNotes,
+                RevealMermaid,
+                RevealChalkboard,
+                RevealCustomControls,
+            ],
+            slideNumber: true,
+            customcontrols: {
+                controls: [
+                    {
+                        icon: '<div></div>',
+                        title: 'Clear canvas (DEL)',
+                        action: 'RevealChalkboard.clear();',
                     },
+                    {
+                        icon: '<div></div>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();',
+                    },
+                    {
+                        icon: '<div></div>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();',
+                    },
+                ],
+            },
+            chalkboard: {
+                boardmarkerWidth: 5,
+                boardmarkers: [
+                    {
+                        color: colors.bg,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.fg,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.blue,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.red,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.green,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.yellow,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.teal,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                    {
+                        color: colors.orange,
+                        cursor:
+                            'url(' +
+                            path +
+                            'img/boardmarker-black.png), auto',
+                    },
+                ],
+                chalks: [
+                    {
+                        color: colors.bg,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.fg,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.blue,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.red,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.green,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.yellow,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.teal,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                    {
+                        color: colors.orange,
+                        cursor:
+                            'url(' + path + 'img/chalk-white.png), auto',
+                    },
+                ],
+            },
+            mermaid: {
+                securityLevel: 'loose',
+                theme: 'dark',
+                themeVariables: {
+                    darkMode: true,
+                    textColor: colors.fg,
+                    background: colors.bg,
+                    mainBkg: colors.bg,
+                    lineColor: colors.fg,
                 },
-            })
-        </script>
-    </body>
-</html>
+            },
+        })
+    </script>
+</body>
 
+</html>
