@@ -1,66 +1,74 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>reveal.js</title>
 
-    <title>reveal.js</title>
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
 
-    <link rel="stylesheet" href="dist/reset.css" />
-    <link rel="stylesheet" href="dist/reveal.css" />
-    <link rel="stylesheet" href="dist/theme/tokyo-night.css" />
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
+        <link rel="stylesheet" href="plugin/chalkboard/style.css" />
+        <link rel="stylesheet" href="plugin/customcontrols/style.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
 
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/tokyo-night.css" />
-    <link rel="stylesheet" href="plugin/chalkboard/style.css" />
-    <link rel="stylesheet" href="plugin/customcontrols/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <h1>Event-Driven Programming (EDP)</h1>
-                <h3>Событийно-управляемое программирование (СУП)</h3>
-                <img class="r-stretch" src="https://ktkv-presentations.github.io/algos-21" data-type="qrcode" />
-            </section>
-            <section>
+    <body>
+        <div class="reveal">
+            <div class="slides">
                 <section>
-                    <h1>Событийно-управляемое программирование </h1>
-                    <p>парадигма, в которой выполнение программы определяется возникновением событий</p>
-                    <div class="border-b">
-                        <strong>
-                            Ключевые особенности:
-                        </strong>
-                        <ul>
-                            <li>
-                                Код не выполняется линейно, а ожидает события.
-                            </li>
-                            <li>
-                                Есть механизм регистрации обработчиков событий.
-                            </li>
-                            <li>
-                                Используется диспетчеризация событий (event dispatching) через цикл событий (event
-                                loop).
-                            </li>
-                        </ul>
-                    </div>
+                    <h1>Event-Driven Programming (EDP)</h1>
+                    <h3>Событийно-управляемое программирование (СУП)</h3>
+                    <img
+                        class="r-stretch"
+                        src="https://ktkv-presentations.github.io/algos-21"
+                        data-type="qrcode" />
                 </section>
                 <section>
-                    <div class="grid grid-cols-2 gap-4">
+                    <section>
+                        <h1>Событийно-управляемое программирование</h1>
+                        <p>
+                            парадигма, в которой выполнение программы
+                            определяется возникновением событий
+                        </p>
                         <div class="border-b">
-                            <h3>JavaScript</h3>
-                            <pre><code data-trim class="js">
+                            <strong>Ключевые особенности:</strong>
+                            <ul>
+                                <li>
+                                    Код не выполняется линейно, а ожидает
+                                    события.
+                                </li>
+                                <li>
+                                    Есть механизм регистрации обработчиков
+                                    событий.
+                                </li>
+                                <li>
+                                    Используется диспетчеризация событий (event
+                                    dispatching) через цикл событий (event
+                                    loop).
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border-b">
+                                <h3>JavaScript</h3>
+                                <pre><code data-trim class="js">
 document.getElementById("btn").addEventListener("click", () => {
     console.log("Кнопка нажата!");
 });
                     </code></pre>
-                        </div>
-                        <div class="border-b">
-                            <h3>Python</h3>
-                            <pre><code data-trim class="js">
+                            </div>
+                            <div class="border-b">
+                                <h3>Python</h3>
+                                <pre><code data-trim class="js">
 import tkinter as tk
 
 def on_button_click():
@@ -72,40 +80,49 @@ button.pack()
 
 root.mainloop()
                             </code></pre>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h1>Component-Based Software Engineering (CBSE)</h1>
-                    <h3>Компонентно-ориентированное программирование</h3>
-                    <p>методология, при которой система строится из независимых и повторно используемых компонентов</p>
-                    <div class="border-b">
-                        <b>Основные принципы:</b>
-                        <ul>
-                            <li>
-                                <em>Модульность</em> – каждая часть системы оформлена в виде независимого компонента.
-                            </li>
-                            <li>
-                                <em>Повторное использование</em> – компоненты могут быть использованы в разных проектах.
-                            </li>
-                            <li>
-                                <em>Инкапсуляция</em> – детали реализации скрыты, компоненты взаимодействуют через
-                                интерфейсы.
-                            </li>
-                            <li>
-                                <em>Связывание через события</em> – компоненты реагируют на события и изменяют своё
-                                состояние
-                            </li>
-                        </ul>
-                    </div>
+                    </section>
                 </section>
                 <section>
-                    <div class="grid grid-cols-2 gap-4">
+                    <section>
+                        <h1>Component-Based Software Engineering (CBSE)</h1>
+                        <h3>Компонентно-ориентированное программирование</h3>
+                        <p>
+                            методология, при которой система строится из
+                            независимых и повторно используемых компонентов
+                        </p>
                         <div class="border-b">
-                            <h1>React (JS)</h1>
-                            <pre><code data-trim class="js">
+                            <b>Основные принципы:</b>
+                            <ul>
+                                <li>
+                                    <em>Модульность</em>
+                                    – каждая часть системы оформлена в виде
+                                    независимого компонента.
+                                </li>
+                                <li>
+                                    <em>Повторное использование</em>
+                                    – компоненты могут быть использованы в
+                                    разных проектах.
+                                </li>
+                                <li>
+                                    <em>Инкапсуляция</em>
+                                    – детали реализации скрыты, компоненты
+                                    взаимодействуют через интерфейсы.
+                                </li>
+                                <li>
+                                    <em>Связывание через события</em>
+                                    – компоненты реагируют на события и изменяют
+                                    своё состояние
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border-b">
+                                <h1>React (JS)</h1>
+                                <pre><code data-trim class="js">
 function ButtonComponent() {
     const handleClick = () => {
         console.log("Компонентная кнопка нажата!");
@@ -114,13 +131,16 @@ function ButtonComponent() {
     return &lt;button onClick={handleClick}&gt;Нажми меня&lt;/button&gt;;
 }
                     </code></pre>
-                            <small>
-                                <em>компонент можно многократно использовать в разных частях проекта</em>
-                            </small>
-                        </div>
-                        <div class="border-b">
-                            <h1>Tkinter (Python)</h1>
-                            <pre><code data-trim class="python">
+                                <small>
+                                    <em>
+                                        компонент можно многократно использовать
+                                        в разных частях проекта
+                                    </em>
+                                </small>
+                            </div>
+                            <div class="border-b">
+                                <h1>Tkinter (Python)</h1>
+                                <pre><code data-trim class="python">
 import tkinter as tk
 
 class ButtonComponent:
@@ -137,120 +157,131 @@ button2 = ButtonComponent(root, "Кнопка 2")
 
 root.mainloop()
                         </code></pre>
-                            <small>
-                                <em>класс ButtonComponent представляет собой переиспользуемый компонент, который можно
-                                    создавать с разными параметрами</em>
-                            </small>
+                                <small>
+                                    <em>
+                                        класс ButtonComponent представляет собой
+                                        переиспользуемый компонент, который
+                                        можно создавать с разными параметрами
+                                    </em>
+                                </small>
+                            </div>
                         </div>
-                    </div>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Event</h3>
-                    <h4>События</h4>
-                    <p>определенное изменение состояния системы или внешней среды, на которое можно реагировать</p>
-                    <ul>
-                        <li>
-                            Клик мыши
-                        </li>
-                        <li>
-                            Нажатие клавиши
-                        </li>
-                        <li>
-                            Соединение с сервером
-                        </li>
-                        <li>
-                            Получение данных от сенсора
-                        </li>
-                        <li>
-                            Изменение значения переменной
-                        </li>
-                    </ul>
+                    </section>
                 </section>
                 <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Subscription</h3>
-                    <h4>Подписка на событие</h4>
-                    <p>процесс регистрации обработчика события, который будет выполнен при его возникновении</p>
-                    <ul>
-                        <li>
-                            Назначать несколько обработчиков для одного события.
-                        </li>
-                        <li>
-                            Разделять логику обработки.
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Emit</h3>
-                    <h4>Генерация события</h4>
-                    <p>процесс отправки сигнала системе о том, что что-то произошло</p>
-                    <ul>
-                        <li>
-                            В интерфейсах (пользователь нажал кнопку)
-                        </li>
-                        <li>
-                            В сетевых приложениях (пришел новый WebSocket-сообщение)
-                        </li>
-                        <li>
-                            В микросервисах (один сервис уведомляет другой)
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Event Loop</h3>
-                    <h4>Цикл обработки событий</h4>
-                    <p>механизм, который постоянно ожидает новые события и вызывает соответствующие обработчики</p>
-                    <p><b>
-                            Где используется:
-                        </b></p>
-                    <ul>
-                        <li>
-                            В браузерах (JavaScript)
-                        </li>
-                        <li>
-                            В асинхронных серверах (Node.js, asyncio)
-                        </li>
-                        <li>
-                            В UI-фреймворках (Tkinter, PyQt)
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Event Queue</h3>
-                    <h4>Очередь событий </h4>
-                    <p>структура данных, в которой события хранятся до обработки</p>
-                    <p><b>
-                            Где используется:
-                        </b></p>
-                    <ul>
-                        <li>
-                            В многопоточных системах
-                        </li>
-                        <li>
-                            В браузерах
-                        </li>
-                        <li>
-                            В серверных фреймворках
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h1>Основные понятия событийно-ориентированного программирования</h1>
-                    <h3>Callback</h3>
-                    <h4>Обратные вызовы</h4>
-                    <p>используются для выполнения кода после наступления события</p>
-                </section>
-                <section>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="border-b">
-                            <h1>React (JS)</h1>
-                            <pre><code data-trim class="js">
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Event</h3>
+                        <h4>События</h4>
+                        <p>
+                            определенное изменение состояния системы или внешней
+                            среды, на которое можно реагировать
+                        </p>
+                        <ul>
+                            <li>Клик мыши</li>
+                            <li>Нажатие клавиши</li>
+                            <li>Соединение с сервером</li>
+                            <li>Получение данных от сенсора</li>
+                            <li>Изменение значения переменной</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Subscription</h3>
+                        <h4>Подписка на событие</h4>
+                        <p>
+                            процесс регистрации обработчика события, который
+                            будет выполнен при его возникновении
+                        </p>
+                        <ul>
+                            <li>
+                                Назначать несколько обработчиков для одного
+                                события.
+                            </li>
+                            <li>Разделять логику обработки.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Emit</h3>
+                        <h4>Генерация события</h4>
+                        <p>
+                            процесс отправки сигнала системе о том, что что-то
+                            произошло
+                        </p>
+                        <ul>
+                            <li>В интерфейсах (пользователь нажал кнопку)</li>
+                            <li>
+                                В сетевых приложениях (пришел новый
+                                WebSocket-сообщение)
+                            </li>
+                            <li>
+                                В микросервисах (один сервис уведомляет другой)
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Event Loop</h3>
+                        <h4>Цикл обработки событий</h4>
+                        <p>
+                            механизм, который постоянно ожидает новые события и
+                            вызывает соответствующие обработчики
+                        </p>
+                        <p><b>Где используется:</b></p>
+                        <ul>
+                            <li>В браузерах (JavaScript)</li>
+                            <li>В асинхронных серверах (Node.js, asyncio)</li>
+                            <li>В UI-фреймворках (Tkinter, PyQt)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Event Queue</h3>
+                        <h4>Очередь событий</h4>
+                        <p>
+                            структура данных, в которой события хранятся до
+                            обработки
+                        </p>
+                        <p><b>Где используется:</b></p>
+                        <ul>
+                            <li>В многопоточных системах</li>
+                            <li>В браузерах</li>
+                            <li>В серверных фреймворках</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>
+                            Основные понятия событийно-ориентированного
+                            программирования
+                        </h1>
+                        <h3>Callback</h3>
+                        <h4>Обратные вызовы</h4>
+                        <p>
+                            используются для выполнения кода после наступления
+                            события
+                        </p>
+                    </section>
+                    <section>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border-b">
+                                <h1>React (JS)</h1>
+                                <pre><code data-trim class="js">
 function fetchData(callback) {
     setTimeout(() => {
         callback("Данные загружены");
@@ -261,13 +292,16 @@ fetchData((data) => {
     console.log(data);
 });
                             </code></pre>
-                            <small>
-                                <em><code>callback()</code> вызывается после завершения операции</em>
-                            </small>
-                        </div>
-                        <div class="border-b">
-                            <h1>Asyncio</h1>
-                            <pre><code data-trim class="python">
+                                <small>
+                                    <em>
+                                        <code>callback()</code>
+                                        вызывается после завершения операции
+                                    </em>
+                                </small>
+                            </div>
+                            <div class="border-b">
+                                <h1>Asyncio</h1>
+                                <pre><code data-trim class="python">
 import asyncio
 
 async def fetch_data():
@@ -280,217 +314,325 @@ async def main():
 
 asyncio.run(main())
                             </code></pre>
-                            <small>
-                                <em>await останавливает выполнение, пока данные не будут загружены</em>
-                            </small>
+                                <small>
+                                    <em>
+                                        await останавливает выполнение, пока
+                                        данные не будут загружены
+                                    </em>
+                                </small>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </section>
-            </section>
-            <section>
                 <section>
-                    <h1>История развития и популярность подходов</h1>
-                    <ul>
-                        <li>
-                            Событийно-управляемое программирование развивалось вместе с GUI. Ранние графические
-                            интерфейсы, такие как X Window System (1984), использовали событийную модель. Сегодня она
-                            применяется в браузерах (JavaScript, React), серверных технологиях (Node.js, WebSockets) и
-                            GUI-фреймворках (Tkinter, PyQt, Electron).
-                        </li>
-                        <li>
-                            Компонентный подход зародился с модульного программирования в 1960-х. В 1990-х появились
-                            COM, JavaBeans, а затем React, Vue, Tkinter и модульные микросервисные архитектуры.
-                        </li>
-                    </ul>
+                    <section>
+                        <h1>История развития и популярность подходов</h1>
+                        <ul>
+                            <li>
+                                Событийно-управляемое программирование
+                                развивалось вместе с GUI. Ранние графические
+                                интерфейсы, такие как X Window System (1984),
+                                использовали событийную модель. Сегодня она
+                                применяется в браузерах (JavaScript, React),
+                                серверных технологиях (Node.js, WebSockets) и
+                                GUI-фреймворках (Tkinter, PyQt, Electron).
+                            </li>
+                            <li>
+                                Компонентный подход зародился с модульного
+                                программирования в 1960-х. В 1990-х появились
+                                COM, JavaBeans, а затем React, Vue, Tkinter и
+                                модульные микросервисные архитектуры.
+                            </li>
+                        </ul>
+                    </section>
                 </section>
-            </section>
+                <section>
+                    <section>
+                        <h1>Компонентно-ориентированное программирование</h1>
+                        <h3>Component-Based Development (CBD)</h3>
+                        <p>
+                            подход к разработке программного обеспечения, при
+                            котором система строится из независимых компонентов,
+                            обладающих четко определенным интерфейсом
+                            взаимодействия
+                        </p>
+                        <div class="border-b">
+                            широко применяется в веб-разработке, создании
+                            UI-фреймворков, игровых движков и корпоративных
+                            приложений
+                        </div>
+                    </section>
+                    <section>
+                        <h1>
+                            Принципы компонентно-ориентированного
+                            программирования
+                        </h1>
+                        <ul>
+                            <li>
+                                <code>Компонент</code>
+                                — это модуль с четко определенным интерфейсом
+                            </li>
+                            <ul>
+                                <li>
+                                    Каждый компонент реализует определенную
+                                    функциональность.
+                                </li>
+                                <li>
+                                    Он может быть повторно использован в разных
+                                    частях программы
+                                </li>
+                            </ul>
+                            <li>
+                                Слабая связанность (low coupling) и высокая
+                                независимость
+                            </li>
+                            <ul>
+                                <li>
+                                    Компоненты взаимодействуют через API или
+                                    события
+                                </li>
+                                <li>
+                                    Один компонент можно заменить без изменений
+                                    в других частях системы
+                                </li>
+                            </ul>
+                            <li>Инкапсуляция данных и логики</li>
+                            <ul>
+                                <li>
+                                    Внутреннее состояние компонента скрыто от
+                                    внешнего мира
+                                </li>
+                                <li>
+                                    Доступ к данным происходит только через
+                                    публичные методы
+                                </li>
+                            </ul>
+                            <li>Повторное использование</li>
+                            <ul>
+                                <li>
+                                    Компоненты могут быть использованы в разных
+                                    проектах без модификации
+                                </li>
+                            </ul>
+                            <li>Композиция вместо наследования</li>
+                            <ul>
+                                <li>
+                                    В отличие от объектно-ориентированного
+                                    подхода, компоненты чаще комбинируются, а не
+                                    наследуются
+                                </li>
+                            </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Преимущества компонентного подхода</h1>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="border-b">
+                                <h4>Гибкость и масштабируемость</h4>
+                                <p>
+                                    Можно легко заменять и обновлять отдельные
+                                    части системы.
+                                </p>
+                            </div><div class="border-b">
+                                <h4>Повторное использование кода</h4>
+                                <p>Компоненты можно переносить между проектами</p>
+                            </div><div class="border-b">
+                                <h4>Легкость тестирования</h4>
+                                <p>Каждый компонент можно тестировать отдельно</p>
+                            </div><div class="border-b">
+                                <h4>Упрощенное сопровождение</h4>
+                                <p>Проще поддерживать код, состоящий из независимых модулей</p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script src="plugin/qrcode/qrcode.js"></script>
-    <script src="plugin/mermaid/mermaid.js"></script>
-    <script src="plugin/chalkboard/plugin.js"></script>
-    <script src="plugin/customcontrols/plugin.js"></script>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script src="plugin/qrcode/qrcode.js"></script>
+        <script src="plugin/mermaid/mermaid.js"></script>
+        <script src="plugin/chalkboard/plugin.js"></script>
+        <script src="plugin/customcontrols/plugin.js"></script>
 
-    <script>
-        tailwind.config = {
-            corePlugins: {
-                preflight: false,
-            },
-        }
-    </script>
-    <script>
-        // More info about initialization & config:
-        // - https://revealjs.com/initialization/
-        // - https://revealjs.com/config/
-
-        const colors = {
-            blue0: 'rgb(61, 89, 161)',
-            blue: 'rgb(122, 162, 247)',
-            cyan: 'rgb(125, 207, 255)',
-            magenta: 'rgb(187, 154, 247)',
-            orange: 'rgb(255, 158, 100)',
-            yellow: 'rgb(224, 175, 104)',
-            green: 'rgb(158, 206, 106)',
-            teal: 'rgb(26, 188, 156)',
-            red: 'rgb(255, 117, 127)',
-            red1: 'rgb(219, 75, 75)',
-            fg: 'rgb(192, 202, 245)',
-            bg: 'rgb(26, 27, 38)',
-            transparent: '#00000000',
-        }
-
-        Reveal.initialize({
-            hash: true,
-            // Learn about plugins: https://revealjs.com/plugins/
-            plugins: [
-                RevealMarkdown,
-                RevealHighlight,
-                RevealNotes,
-                RevealMermaid,
-                RevealChalkboard,
-                RevealCustomControls,
-            ],
-            slideNumber: true,
-            customcontrols: {
-                controls: [
-                    {
-                        icon: '<div></div>',
-                        title: 'Clear canvas (DEL)',
-                        action: 'RevealChalkboard.clear();',
-                    },
-                    {
-                        icon: '<div></div>',
-                        title: 'Toggle chalkboard (B)',
-                        action: 'RevealChalkboard.toggleChalkboard();',
-                    },
-                    {
-                        icon: '<div></div>',
-                        title: 'Toggle notes canvas (C)',
-                        action: 'RevealChalkboard.toggleNotesCanvas();',
-                    },
-                ],
-            },
-            chalkboard: {
-                boardmarkerWidth: 5,
-                boardmarkers: [
-                    {
-                        color: colors.bg,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.fg,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.blue,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.red,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.green,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.yellow,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.teal,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                    {
-                        color: colors.orange,
-                        cursor:
-                            'url(' +
-                            path +
-                            'img/boardmarker-black.png), auto',
-                    },
-                ],
-                chalks: [
-                    {
-                        color: colors.bg,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.fg,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.blue,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.red,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.green,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.yellow,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.teal,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                    {
-                        color: colors.orange,
-                        cursor:
-                            'url(' + path + 'img/chalk-white.png), auto',
-                    },
-                ],
-            },
-            mermaid: {
-                securityLevel: 'loose',
-                theme: 'dark',
-                themeVariables: {
-                    darkMode: true,
-                    textColor: colors.fg,
-                    background: colors.bg,
-                    mainBkg: colors.bg,
-                    lineColor: colors.fg,
+        <script>
+            tailwind.config = {
+                corePlugins: {
+                    preflight: false,
                 },
-            },
-        })
-    </script>
-</body>
+            }
+        </script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
 
+            const colors = {
+                blue0: 'rgb(61, 89, 161)',
+                blue: 'rgb(122, 162, 247)',
+                cyan: 'rgb(125, 207, 255)',
+                magenta: 'rgb(187, 154, 247)',
+                orange: 'rgb(255, 158, 100)',
+                yellow: 'rgb(224, 175, 104)',
+                green: 'rgb(158, 206, 106)',
+                teal: 'rgb(26, 188, 156)',
+                red: 'rgb(255, 117, 127)',
+                red1: 'rgb(219, 75, 75)',
+                fg: 'rgb(192, 202, 245)',
+                bg: 'rgb(26, 27, 38)',
+                transparent: '#00000000',
+            }
+
+            Reveal.initialize({
+                hash: true,
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [
+                    RevealMarkdown,
+                    RevealHighlight,
+                    RevealNotes,
+                    RevealMermaid,
+                    RevealChalkboard,
+                    RevealCustomControls,
+                ],
+                slideNumber: true,
+                customcontrols: {
+                    controls: [
+                        {
+                            icon: '<div></div>',
+                            title: 'Clear canvas (DEL)',
+                            action: 'RevealChalkboard.clear();',
+                        },
+                        {
+                            icon: '<div></div>',
+                            title: 'Toggle chalkboard (B)',
+                            action: 'RevealChalkboard.toggleChalkboard();',
+                        },
+                        {
+                            icon: '<div></div>',
+                            title: 'Toggle notes canvas (C)',
+                            action: 'RevealChalkboard.toggleNotesCanvas();',
+                        },
+                    ],
+                },
+                chalkboard: {
+                    boardmarkerWidth: 5,
+                    boardmarkers: [
+                        {
+                            color: colors.bg,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.fg,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.blue,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.red,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.green,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.yellow,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.teal,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                        {
+                            color: colors.orange,
+                            cursor:
+                                'url(' +
+                                path +
+                                'img/boardmarker-black.png), auto',
+                        },
+                    ],
+                    chalks: [
+                        {
+                            color: colors.bg,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.fg,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.blue,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.red,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.green,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.yellow,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.teal,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                        {
+                            color: colors.orange,
+                            cursor:
+                                'url(' + path + 'img/chalk-white.png), auto',
+                        },
+                    ],
+                },
+                mermaid: {
+                    securityLevel: 'loose',
+                    theme: 'dark',
+                    themeVariables: {
+                        darkMode: true,
+                        textColor: colors.fg,
+                        background: colors.bg,
+                        mainBkg: colors.bg,
+                        lineColor: colors.fg,
+                    },
+                },
+            })
+        </script>
+    </body>
 </html>
+
